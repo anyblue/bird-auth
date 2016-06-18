@@ -1,0 +1,16 @@
+{
+  "name": "bird-uuap",
+  "version": "1.1.1",
+  "description": "baidu uuap get cookies and then you can use birdv1 with it",
+  "main": "index.js",
+  "dependencies": {
+    "lodash": "^4.13.1",
+    "querystring": "^0.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "gismanli@163.com",
+  "license": "MIT"
+}
