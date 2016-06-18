@@ -1,6 +1,6 @@
 ## Intro
 
-解决[birdv1](https://github.com/weger/bird)版本手动取cookie问题
+解决 [birdv1](https://github.com/weger/bird) 版本手动取cookie问题
 
 
 ## Start
@@ -26,6 +26,7 @@
 
 ```uuap.getCookie()```
 
+---
 
 ## History
 
