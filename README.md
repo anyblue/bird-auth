@@ -1,11 +1,14 @@
 ## Intro
+
 解决 [birdv1](https://github.com/weger/bird) 版本手动取cookie问题
 
 
 ## Start
+
 ```new birdUuap(options[, callback(cookie)])```
 
-# Demo
+## Demo
+
 ```js
     var birdUuap = require('bird-uuap')
 
@@ -21,10 +24,12 @@
 ```
 
 ## More
+
 ```uuap.getCookie()```
 
 
-## History
+## Version
+
 - [1.1.1] rejectUnauthorized: fasle [detail](http://stackoverflow.com/questions/20082893/unable-to-verify-leaf-signature) Online uuap auth bugfix
 - [1.1.0] add bprouting
 - [1.0.1] statusCode === 302 judgment
