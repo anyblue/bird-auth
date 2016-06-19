@@ -5,14 +5,17 @@
 
 ## Start
 
-```new birdUuap(options[, callback(cookie)])```
+```new birdAuth.uuap(options[, callback(cookie)])```
+```new birdAuth.passport(options[, callback(cookie)])```
 
 ## Demo
 
-```js
-    var birdUuap = require('bird-uuap')
+### Uuap auth
 
-    var uuap = new birdUuap({
+```js
+    var birdAuth = require('bird-auth')
+
+    var uuap = new birdAuth.uuap({
         username: 'xxx',
         password: 'xxx',
         uuapServer: 'http://xxx.baidu.com/login',
@@ -23,14 +26,28 @@
     });
 ```
 
+### Passport auth
+
+```js
+    var birdAuth = require('bird-auth')
+
+    var passport = new birdAuth.passport({
+        username: 'xxx',
+        password: 'xxx'
+    }, function(cookie) {
+        console.log(cookie)
+    });
+```
+
 ## More
 
-```uuap.getCookie()```
+- [Funtion] getCookie
 
 
-## Version
+## History
 
-- [1.1.1] rejectUnauthorized: fasle [detail](http://stackoverflow.com/questions/20082893/unable-to-verify-leaf-signature) Online uuap auth bugfix
-- [1.1.0] add bprouting
+- [1.2.0] Add Passport auth
+- [1.1.1] Set rejectUnauthorized false and fix uuap auth bug. [detail](http://stackoverflow.com/questions/20082893/unable-to-verify-leaf-signature) 
+- [1.1.0] Add bprouting
 - [1.0.1] statusCode === 302 judgment
-- [1.0.0] project init
+- [1.0.0] Project init

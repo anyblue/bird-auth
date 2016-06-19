@@ -1,55 +1,7 @@
-var client = require('./lib/uuapClient');
+var birdUuap = require('./lib/uuap.js')
+var birdPassport = require('./lib/passport.js')
 
-var URL = require('url');
-
-var options;
-
-var birdUuap = module.exports = function (params, cb) {
-    if (!params) {
-        throw new Error('Where are you params?');
-    }
-    options = params
-    global.refer = options.uuapServer
-    client.url_get(options.uuapServer, function(res, data) {
-        options.lt = data.match(/name="lt" value="(.+?)"/)[1];
-        options.execution = data.match(/name="execution" value="(.+?)"/)[1];
-        uuapPost(cb)
-    });
-};
-
-
-birdUuap.prototype.getCookie = function (cb) {
-    return client.get_cookies_string()
-};
-
-function uuapPost(cb) {
-    var self = this;
-
-    //Post登录
-    var form = {
-        username: options.username,
-        password: options.password,
-        rememberMe: 'on',
-        lt: options.lt,
-        execution: options.execution,
-        _eventId: 'submit',
-        type: 1
-    };
-
-    var tmp = URL.parse(options.uuapServer)
-    client.post({
-        protocol: tmp.protocol,
-        host: tmp.hostname,
-        port: tmp.port || (tmp.protocol == 'https:' ? 443 : 80),
-        path: tmp.path,
-        method: 'POST',
-        headers: {
-            'Referer': options.uuapServer,
-        }
-    }, form, function (res, data) {
-        // console.log(data)
-        client.get(options.uuapServer + '?service=' + (options.bprouting ? options.bprouting : options.dataServer), function(res, data) {
-            cb && cb(client.get_cookies_string());
-        });
-    });
-};
+module.exports = {
+    uuap: birdUuap,
+    passport: birdPassport
+}
