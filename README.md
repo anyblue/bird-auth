@@ -1,8 +1,9 @@
 # bird-auth
 
 [![NPM Version][npm-image]][npm-url]
+![NODE Version][node-image]
 ![OSX Build][osx-image]
-![Linux Build][liunx-image]
+![LINUX Build][liunx-image]
 
 解决 [birdv1](https://github.com/weger/bird) 版本手动取cookie问题
 
@@ -46,7 +47,8 @@ var passport = new birdAuth.passport({
 
 ## Future
 
-- 账户热切换
+- window passport auth, can't use `open .code.png` to open verify-code picture
+- Change account and get cookie afresh
 - <s>Support Https</s>
 - <s>Support online Passport auth</s>
 - <s>Set rejectUnauthorized false and fix uuap auth bug.</s> [detail](http://stackoverflow.com/questions/20082893/unable-to-verify-leaf-signature)
@@ -59,9 +61,10 @@ var passport = new birdAuth.passport({
 
 ## History
 
-- [1.0.2] Project init
+- [1.0.3] Project init
 
-[npm-image]: https://img.shields.io/badge/node-v0.12.0%2B-brightgreen.svg
+[npm-image]: https://img.shields.io/badge/npm-v1.0.3-blue.svg
 [npm-url]: https://npmjs.org/package/bird-auth
+[node-image]: https://img.shields.io/badge/node-v0.12.0%2B-yellow.svg
 [osx-image]: https://img.shields.io/badge/OSX-passing-brightgreen.svg
 [liunx-image]: https://img.shields.io/badge/Liunx-passing-brightgreen.svg
