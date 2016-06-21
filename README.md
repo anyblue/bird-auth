@@ -1,6 +1,8 @@
 # bird-auth
 
-baidu `passport` or `uuap` auth
+[![NPM Version][npm-image]][npm-url]
+![OSX Build][osx-image]
+![Linux Build][liunx-image]
 
 解决 [birdv1](https://github.com/weger/bird) 版本手动取cookie问题
 
@@ -16,21 +18,21 @@ baidu `passport` or `uuap` auth
 
 ## Demo
 
-### Uuap auth
+#### Uuap auth
 
 ``` js
 var birdAuth = require('bird-auth')
 var uuap = new birdAuth.uuap({
     username: 'xxx',
     password: 'xxx',
-    uuapServer: 'http://xxx.baidu.com/login', // CAS auth 
+    uuapServer: 'http://xxx.baidu.com/login', // CAS auth url 
     service: 'http://xxx.baidu.com/' // service address, if you don't know this url, you can logout you system, and get `service` parameters
 }, function(cookie) {
     console.log(cookie)
 });
 ```
 
-### Passport auth
+#### Passport auth
 
 ``` js
 var birdAuth = require('bird-auth')
@@ -57,4 +59,9 @@ var passport = new birdAuth.passport({
 
 ## History
 
-- [1.0.0] Project init
+- [1.0.2] Project init
+
+[npm-image]: https://img.shields.io/badge/node-v0.12.0%2B-brightgreen.svg
+[npm-url]: https://npmjs.org/package/bird-auth
+[osx-image]: https://img.shields.io/badge/OSX-passing-brightgreen.svg
+[liunx-image]: https://img.shields.io/badge/Liunx-passing-brightgreen.svg

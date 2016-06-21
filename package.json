@@ -1,6 +1,6 @@
 {
   "name": "bird-auth",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "baidu uuap/passport auth and then you can use cookie with birdv1",
   "main": "index.js",
   "dependencies": {
