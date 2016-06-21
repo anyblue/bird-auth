@@ -2,9 +2,11 @@
 
 baidu `passport` or `uuap` auth
 
-## Original
-
 解决 [birdv1](https://github.com/weger/bird) 版本手动取cookie问题
+
+## Install
+
+`npm install --save-dev bird-auth`
 
 ## Examples
 
