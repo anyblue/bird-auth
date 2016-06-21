@@ -47,7 +47,7 @@ var passport = new birdAuth.passport({
 
 ## Future
 
-- window passport auth, can't use `open .code.png` to open verify-code picture
+- Windows environment when execute passport auth, can't use `open` command to open verify-code picture
 - Change account and get cookie afresh
 - <s>Support Https</s>
 - <s>Support online Passport auth</s>
