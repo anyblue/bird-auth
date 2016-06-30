@@ -61,6 +61,7 @@ var passport = new birdAuth.passport({
 
 ## History
 
+- [1.0.6] Fixed get_cookies_string bug
 - [1.0.5] Fixed Syntax Error
 - [1.0.4] Fixed passport auth bugfix
 - [1.0.3] Project init
