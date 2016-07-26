@@ -23,7 +23,7 @@ var passport = require('./lib/passport.js')
 
 if (argv.t == 'uuap' && argv.s) {
     uuap({
-        username: argv.n,
+        username: argv.u,
         password: argv.p,
         server: argv.s
     }, function (cookie) {

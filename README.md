@@ -67,7 +67,7 @@ var passport = new birdAuth.passport({
 - [1.0.4] Fixed passport auth bugfix
 - [1.0.3] Project init
 
-[npm-image]: https://img.shields.io/badge/npm-v1.1.0-blue.svg
+[npm-image]: https://img.shields.io/badge/npm-v1.1.1-blue.svg
 [npm-url]: https://npmjs.org/package/bird-auth
 [node-image]: https://img.shields.io/badge/node-v0.12.0%2B-yellow.svg
 [osx-image]: https://img.shields.io/badge/OSX-passing-brightgreen.svg
