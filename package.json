@@ -5,11 +5,15 @@
   "main": "index.js",
   "dependencies": {
     "lodash": "^4.13.1",
-    "querystring": "^0.2.0"
+    "querystring": "^0.2.0",
+    "yargs": "^4.8.1"
   },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "bird-auth": "./bird-auth.js"
   },
   "author": "gismanli@163.com",
   "license": "MIT"
