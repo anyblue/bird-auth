@@ -39,7 +39,8 @@ var uuap = new birdAuth.uuap({
 var birdAuth = require('bird-auth')
 var passport = new birdAuth.passport({
     username: 'xxx',
-    password: 'xxx'
+    password: 'xxx',
+    service: 'https://passport.baidu.com/v2/?login' //default passport.baidu.com
 }, function(cookie) {
     console.log(cookie)
 });
@@ -61,13 +62,14 @@ var passport = new birdAuth.passport({
 
 ## History
 
+- [1.1.3] Custom agent to fix https authorized bug. :(
 - [1.1.0] Add `bird-auth` command, you can use `bird-auth -h` to see more :)
 - [1.0.6] Fixed get_cookies_string bug
 - [1.0.5] Fixed Syntax Error
 - [1.0.4] Fixed passport auth bugfix
 - [1.0.3] Project init
 
-[npm-image]: https://img.shields.io/badge/npm-v1.1.1-blue.svg
+[npm-image]: https://img.shields.io/badge/npm-v1.1.3-blue.svg
 [npm-url]: https://npmjs.org/package/bird-auth
 [node-image]: https://img.shields.io/badge/node-v0.12.0%2B-yellow.svg
 [osx-image]: https://img.shields.io/badge/OSX-passing-brightgreen.svg

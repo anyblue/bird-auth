@@ -33,7 +33,8 @@ if (argv.t == 'uuap' && argv.s) {
 else if (argv.t == 'passport'){
     passport({
         username: argv.u,
-        password: argv.p
+        password: argv.p,
+        service: argv.s
     }, function (cookie) {
         console.log(cookie)
     })
