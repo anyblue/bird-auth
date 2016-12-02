@@ -13,13 +13,13 @@
 
 ## Examples
 
-```new birdAuth.uuap(options[, callback(cookie)])```
+<!-- ```new birdAuth.uuap(options[, callback(cookie)])``` -->
 
 ```new birdAuth.passport(options[, callback(cookie)])```
 
 ## Demo
 
-#### Uuap auth
+<!-- #### Uuap auth
 
 ``` js
 var birdAuth = require('bird-auth')
@@ -31,7 +31,7 @@ var uuap = new birdAuth.uuap({
 }, function(cookie) {
     console.log(cookie)
 });
-```
+``` -->
 
 #### Passport auth
 
@@ -55,10 +55,6 @@ var passport = new birdAuth.passport({
 - <s>Set rejectUnauthorized false and fix uuap auth bug.</s> [detail](http://stackoverflow.com/questions/20082893/unable-to-verify-leaf-signature)
 - <s>Add bprouting support</s>
 - <s>statusCode === 302 judgment</s>
-
-## More
-
-- [] getCookie()
 
 ## History
 
