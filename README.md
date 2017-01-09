@@ -58,7 +58,7 @@ var passport = new birdAuth.passport({
 
 ## History
 
-- [1.1.8] fix passport agent.
+- [1.1.9] fix passport agent.
 - [1.1.6] Fixup 302 response location is not a normal url 😂
 - [1.1.3] Custom agent to fix https authorized bug. :(
 - [1.1.0] Add `bird-auth` command, you can use `bird-auth -h` to see more :)
@@ -67,7 +67,7 @@ var passport = new birdAuth.passport({
 - [1.0.4] Fixed passport auth bugfix
 - [1.0.3] Project init
 
-[npm-image]: https://img.shields.io/badge/npm-v1.1.8-blue.svg
+[npm-image]: https://img.shields.io/badge/npm-v1.1.9-blue.svg
 [npm-url]: https://npmjs.org/package/bird-auth
 [node-image]: https://img.shields.io/badge/node-v0.12.0%2B-yellow.svg
 [osx-image]: https://img.shields.io/badge/OSX-passing-brightgreen.svg
