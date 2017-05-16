@@ -13,14 +13,13 @@
 
 ## API
 
-
 ### birdAuth
 
 | name | api | instance function |
 | :----- | :----- | :----- |
-| `client` | `client[fn]` |
+| `client` | `client[fn]` | `null` |
 | `baidu.uuap` | `birdAuth.baidu.uuap(options[, callback])` | `retry`, `getCookie` |
-| `baidu.passport`| `irdAuth.baidu.passport(options[, callback])` | `getCookie` |
+| `baidu.passport`| `birdAuth.baidu.passport(options[, callback])` | `getCookie` |
 | `netease.music`| `birdAuth.netease.music(options[, callback])` | `retry`, 'getCookie`, `aesEncrypt` |
 
 
@@ -33,6 +32,20 @@
 | `post` | `client.post(options, callback)` | post method(with cookie) |
 | `get_cookies_string` | `client.get_cookies_string()` | get all cookies |
 
+
+## Command Line
+
+```bash
+Options:
+  -h, --help      Show help                                            [boolean]
+  -t, --type      baidu_uuap, baidu_uuap, netease_music  [default: "baidu_uuap"]
+  -u, --username  username                                            [required]
+  -p, --password  password                                            [required]
+  -s, --server    server(baidu_uuap need it), if you don't know this, you can
+                  logout you system and get url.
+```
+
+use: `bird -u xxx -p xxx -t netseae_music`
 
 ## Examples
 
@@ -70,7 +83,7 @@ var passport = new birdAuth.baidu.passport({
 });
 ```
 
-### netease music auth
+#### netease music auth
 
 ```javascript
 var birdAuth = require('bird-auth')
@@ -81,6 +94,7 @@ var music = new birdAuth.netease.music({
     console.log(cookie)
 });
 ```
+
 
 ## Future
 
