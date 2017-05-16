@@ -11,19 +11,36 @@
 
 `npm install --save-dev bird-auth`
 
+## API
+
+
+### birdAuth
+
+| name | api | instance function |
+| :----- | :----- | :----- |
+| `client` | `client[fn]` |
+| `baidu.uuap` | `birdAuth.baidu.uuap(options[, callback])` | `retry`, `getCookie` |
+| `baidu.passport`| `irdAuth.baidu.passport(options[, callback])` | `getCookie` |
+| `netease.music`| `birdAuth.netease.music(options[, callback])` | `retry`, 'getCookie`, `aesEncrypt` |
+
+
+### client
+
+| method | demo | detail |
+| :----- | :-- | :----- |
+| `url_get` | `client.url_get(url, callback)` | get method(no cookie) |
+| `get` | `client.get(url, callback)` | get method(with cookie) |
+| `post` | `client.post(options, callback)` | post method(with cookie) |
+| `get_cookies_string` | `client.get_cookies_string()` | get all cookies |
+
+
 ## Examples
 
-<!-- ```new birdAuth.uuap(options[, callback(cookie)])``` -->
+#### baidu uuap auth
 
-```new birdAuth.passport(options[, callback(cookie)])```
-
-## Demo
-
-<!-- #### Uuap auth
-
-``` js
+```javascript
 var birdAuth = require('bird-auth')
-var uuap = new birdAuth.uuap({
+var uuap = new birdAuth.baidu.uuap({
     username: 'xxx',
     password: 'xxx',
     uuapServer: 'http://xxx.baidu.com/login', // CAS auth url 
@@ -31,13 +48,20 @@ var uuap = new birdAuth.uuap({
 }, function(cookie) {
     console.log(cookie)
 });
-``` -->
 
-#### Passport auth
+uuap.retry({
+    username: 'xxx',
+    password: 'xxx',
+    uuapServer: 'http://xxx.baidu.com/login',
+    service: 'http://xxx.baidu.com/'
+});
+```
 
-``` js
+#### baidu passport auth
+
+```javascript
 var birdAuth = require('bird-auth')
-var passport = new birdAuth.passport({
+var passport = new birdAuth.baidu.passport({
     username: 'xxx',
     password: 'xxx',
     service: 'https://passport.baidu.com/v2/?login' //default passport.baidu.com
@@ -46,9 +70,21 @@ var passport = new birdAuth.passport({
 });
 ```
 
+### netease music auth
+
+```javascript
+var birdAuth = require('bird-auth')
+var music = new birdAuth.netease.music({
+    username: 'xxx', // phone number or mail
+    password: 'xxx'
+}, function(cookie) {
+    console.log(cookie)
+});
+```
+
 ## Future
 
-- Windows environment when execute passport auth, can't use `open` command to open verify-code picture
+- When performing passport authentication in a Windows Environment, can't use `open` command to open verify-code picture
 - Change account and get cookie afresh
 - <s>Support Https</s>
 - <s>Support online Passport auth</s>
@@ -58,6 +94,7 @@ var passport = new birdAuth.passport({
 
 ## History
 
+- [1.2.0] group auth and add netease music auth.
 - [1.1.10] add httpClient Content-Type adjust.
 - [1.1.9] fix passport agent.
 - [1.1.6] Fixup 302 response location is not a normal url 😂
@@ -68,7 +105,7 @@ var passport = new birdAuth.passport({
 - [1.0.4] Fixed passport auth bugfix
 - [1.0.3] Project init
 
-[npm-image]: https://img.shields.io/badge/npm-v1.1.10-blue.svg
+[npm-image]: https://img.shields.io/badge/npm-v1.2.0-blue.svg
 [npm-url]: https://npmjs.org/package/bird-auth
 [node-image]: https://img.shields.io/badge/node-v0.12.0%2B-yellow.svg
 [osx-image]: https://img.shields.io/badge/OSX-passing-brightgreen.svg

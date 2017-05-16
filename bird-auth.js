@@ -4,7 +4,7 @@ var argv = require('yargs')
     .help('h')
     .alias('h', 'help')
     .alias('t', 'type')
-    .default('t', 'uuap')
+    .default('t', 'baidu_uuap')
     .describe('t', 'which `uuap` or `passport` you want to use ?')
     .alias('u', 'username')
     .demand('u', true)
@@ -13,29 +13,40 @@ var argv = require('yargs')
     .demand('p', true)
     .describe('p', 'password')
     .alias('s', 'server')
-    .describe('s', "server(uuap need it), if you don't know this, you can logout you system and get url.")
+    .describe('s', "server(baidu_uuap need it), if you don't know this, you can logout you system and get url.")
     .argv;
 
-var URL = require('url');
+var baiduUuap = require('./lib/baidu/uuap.js');
+var baiduPassport = require('./lib/baidu/passport.js');
+var neteaseMusic = require('./lib/netease/music.js');
 
-var uuap = require('./lib/uuap.js')
-var passport = require('./lib/passport.js')
 
-if (argv.t == 'uuap' && argv.s) {
-    uuap({
-        username: argv.u,
-        password: argv.p,
-        server: argv.s
-    }, function (cookie) {
-        console.log(cookie)
-    })
-}
-else if (argv.t == 'passport'){
-    passport({
-        username: argv.u,
-        password: argv.p,
-        service: argv.s
-    }, function (cookie) {
-        console.log(cookie)
-    })
+var CALLBACK = function (cookie) {
+    console.log(cookie);
+    return cookie;
+};
+
+switch (argv.t) {
+    case 'baidu_uuap':
+        baiduUuap({
+            username: argv.u,
+            password: argv.p,
+            server: argv.s
+        }, CALLBACK);
+        break;
+    case 'baidu_passport':
+        baiduPassport({
+            username: argv.u,
+            password: argv.p,
+            server: argv.s
+        }, CALLBACK);
+        break;
+    case 'netease_music':
+        neteaseMusic({
+            username: argv.u,
+            password: argv.p
+        }, CALLBACK);
+        break;
+    default:
+        break;
 }
