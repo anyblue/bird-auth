@@ -5,7 +5,7 @@
 ![OSX Build][osx-image]
 ![LINUX Build][liunx-image]
 
-解决 [birdv1](https://github.com/weger/bird) 版本手动取cookie问题
+解决 [birdv1](https://github.com/weger/bird) 版本手动取cookie问题, 支持网易云音乐、百度认证。
 
 ## Install
 
@@ -17,10 +17,10 @@
 
 | name | api | instance function |
 | :----- | :----- | :----- |
-| `client` | `client[fn]` | `null` |
+| `client` | `client[fn]` | not support |
 | `baidu.uuap` | `birdAuth.baidu.uuap(options[, callback])` | `retry`, `getCookie` |
 | `baidu.passport`| `birdAuth.baidu.passport(options[, callback])` | `getCookie` |
-| `netease.music`| `birdAuth.netease.music(options[, callback])` | `retry`, 'getCookie`, `aesEncrypt` |
+| `netease.music`| `birdAuth.netease.music(options[, callback])` | `retry`, `getCookie`, `aesEncrypt` |
 
 
 ### client
@@ -35,17 +35,17 @@
 
 ## Command Line
 
+usage: `bird -u xxx -p xxx -t netseae_music`
+
 ```bash
 Options:
   -h, --help      Show help                                            [boolean]
   -t, --type      baidu_uuap, baidu_uuap, netease_music  [default: "baidu_uuap"]
   -u, --username  username                                            [required]
   -p, --password  password                                            [required]
-  -s, --server    server(baidu_uuap need it), if you don't know this, you can
-                  logout you system and get url.
+  -s, --server    server(baidu_uuap need it), if you don't know this, you can logout you system and get url.
 ```
 
-use: `bird -u xxx -p xxx -t netseae_music`
 
 ## Examples
 
@@ -98,8 +98,9 @@ var music = new birdAuth.netease.music({
 
 ## Future
 
+- support (`qq`, `wx`, `weibo`, etc.) auth
 - When performing passport authentication in a Windows Environment, can't use `open` command to open verify-code picture
-- Change account and get cookie afresh
+- <s>Change account and get cookie afresh</s>
 - <s>Support Https</s>
 - <s>Support online Passport auth</s>
 - <s>Set rejectUnauthorized false and fix uuap auth bug.</s> [detail](http://stackoverflow.com/questions/20082893/unable-to-verify-leaf-signature)
