@@ -5,7 +5,6 @@
   "main": "index.js",
   "dependencies": {
     "big-integer": "^1.6.22",
-    "debugger": "^0.35.0",
     "lodash": "^4.13.1",
     "lodash.union": "^4.6.0",
     "querystring": "^0.2.0",
