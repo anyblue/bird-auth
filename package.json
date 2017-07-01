@@ -1,6 +1,6 @@
 {
   "name": "bird-auth",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "description": "get cookie and then you can use it with birdv1",
   "main": "index.js",
   "dependencies": {

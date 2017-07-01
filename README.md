@@ -31,6 +31,7 @@
 | `get` | `client.get(url, callback)` | get method(with cookie) |
 | `post` | `client.post(options, callback)` | post method(with cookie) |
 | `get_cookies_string` | `client.get_cookies_string()` | get all cookies |
+| `update_cookies(cookies, multiple)` | `client.update_cookies(cookies, true)` | update new cookies |
 
 
 ## Command Line
@@ -109,6 +110,7 @@ var music = new birdAuth.netease.music({
 
 ## History
 
+- [1.2.5] add `client.update_cookies` method.
 - [1.2.4] fix passport test(qatest/rdtest) auth bug.
 - [1.2.0] group auth and add netease music auth.
 - [1.1.10] add httpClient Content-Type adjust.
@@ -121,7 +123,7 @@ var music = new birdAuth.netease.music({
 - [1.0.4] Fixed passport auth bugfix
 - [1.0.3] Project init
 
-[npm-image]: https://img.shields.io/badge/npm-v1.2.4-blue.svg
+[npm-image]: https://img.shields.io/badge/npm-v1.2.5-blue.svg
 [npm-url]: https://npmjs.org/package/bird-auth
 [node-image]: https://img.shields.io/badge/node-v0.12.0%2B-yellow.svg
 [osx-image]: https://img.shields.io/badge/OSX-passing-brightgreen.svg
