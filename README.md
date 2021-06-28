@@ -110,7 +110,8 @@ var music = new birdAuth.netease.music({
 
 ## History
 
-- [1.2.8] add uuap rsa check.
+- [1.3.0] refactor & update auth.
+- [1.2.8] add auth rsa check.
 - [1.2.7] add `client.set_cookies & client.clear_cookies` method.
 - [1.2.5] add `client.update_cookies` method.
 - [1.2.4] fix passport test(qatest/rdtest) auth bug.
