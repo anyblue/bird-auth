@@ -31,7 +31,9 @@
 | `get` | `client.get(url, callback)` | get method(with cookie) |
 | `post` | `client.post(options, callback)` | post method(with cookie) |
 | `get_cookies_string` | `client.get_cookies_string()` | get all cookies |
-| `update_cookies(cookies, multiple)` | `client.update_cookies(cookies, true)` | update new cookies |
+| `update_cookies` | `client.update_cookies(cookies, true)` | update new cookies |
+| `set_cookies` | `client.set_cookies(cookies, true)` | set new cookies |
+| `clear_cookies` | `client.clear_cookies()` | remove all cookies |
 
 
 ## Command Line
@@ -40,21 +42,20 @@ usage: `bird -u xxx -p xxx -t netseae_music`
 
 ```bash
 Options:
-  -h, --help      Show help                                            [boolean]
-  -t, --type      baidu_uuap, baidu_uuap, netease_music  [default: "baidu_uuap"]
+  -h, --help      Show help                                           [boolean]
+  -t, --type      baidu_uuap, baidu_passport, netease_music           [default: "baidu_uuap"]
   -u, --username  username                                            [required]
   -p, --password  password                                            [required]
   -s, --server    server(baidu_uuap need it), if you don't know this, you can logout you system and get url.
 ```
-
 
 ## Examples
 
 #### baidu uuap auth
 
 ```javascript
-var birdAuth = require('bird-auth')
-var uuap = new birdAuth.baidu.uuap({
+const birdAuth = require('bird-auth')
+const uuap = new birdAuth.baidu.uuap({
     username: 'xxx',
     password: 'xxx',
     uuapServer: 'http://xxx.baidu.com/login', // CAS auth url 
@@ -74,8 +75,8 @@ uuap.retry({
 #### baidu passport auth
 
 ```javascript
-var birdAuth = require('bird-auth')
-var passport = new birdAuth.baidu.passport({
+const birdAuth = require('bird-auth')
+const passport = new birdAuth.baidu.passport({
     username: 'xxx',
     password: 'xxx',
     service: 'https://passport.baidu.com/v2/?login' //default passport.baidu.com
@@ -87,26 +88,14 @@ var passport = new birdAuth.baidu.passport({
 #### netease music auth
 
 ```javascript
-var birdAuth = require('bird-auth')
-var music = new birdAuth.netease.music({
+const birdAuth = require('bird-auth')
+const music = new birdAuth.netease.music({
     username: 'xxx', // phone number or mail
     password: 'xxx'
 }, function(cookie) {
     console.log(cookie)
 });
 ```
-
-
-## Future
-
-- support (`qq`, `wx`, `weibo`, etc.) auth
-- When performing passport authentication in a Windows Environment, can't use `open` command to open verify-code picture
-- <s>Change account and get cookie afresh</s>
-- <s>Support Https</s>
-- <s>Support online Passport auth</s>
-- <s>Set rejectUnauthorized false and fix uuap auth bug.</s> [detail](http://stackoverflow.com/questions/20082893/unable-to-verify-leaf-signature)
-- <s>Add bprouting support</s>
-- <s>statusCode === 302 judgment</s>
 
 ## History
 
@@ -126,8 +115,18 @@ var music = new birdAuth.netease.music({
 - [1.0.4] Fixed passport auth bugfix
 - [1.0.3] Project init
 
-[npm-image]: https://img.shields.io/badge/npm-v1.2.8-blue.svg
+[npm-image]: https://img.shields.io/badge/npm-v5.3.6-blue.svg
 [npm-url]: https://npmjs.org/package/bird-auth
-[node-image]: https://img.shields.io/badge/node-v0.12.0%2B-yellow.svg
+[node-image]: https://img.shields.io/badge/node-v10.0.0%2B-yellow.svg
 [osx-image]: https://img.shields.io/badge/OSX-passing-brightgreen.svg
 [liunx-image]: https://img.shields.io/badge/Liunx-passing-brightgreen.svg
+
+## Future
+- refactor with typescript.
+- optimize function, remove useless code.
+- <s>Change account and get cookie afresh</s>
+- <s>Support Https</s>
+- <s>Support online Passport auth</s>
+- <s>Set rejectUnauthorized false and fix uuap auth bug.</s> [detail](http://stackoverflow.com/questions/20082893/unable-to-verify-leaf-signature)
+- <s>Add bprouting support</s>
+- <s>statusCode === 302 judgment</s>

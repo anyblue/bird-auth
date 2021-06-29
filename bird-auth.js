@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 
-var argv = require('yargs')
+const argv = require('yargs')
     .help('h')
     .alias('h', 'help')
     .alias('t', 'type')
     .default('t', 'baidu_uuap')
-    .describe('t', 'baidu_uuap, baidu_uuap, netease_music')
+    .describe('t', 'baidu_uuap, baidu_passport, netease_music')
     .alias('u', 'username')
     .demand('u', true)
     .describe('u', 'username')
@@ -16,12 +16,11 @@ var argv = require('yargs')
     .describe('s', "server(baidu_uuap need it), if you don't know this, you can logout you system and get url.")
     .argv;
 
-var baiduUuap = require('./lib/baidu/uuap.js');
-var baiduPassport = require('./lib/baidu/passport.js');
-var neteaseMusic = require('./lib/netease/music.js');
+const baiduUuap = require('./lib/baidu/uuap.js');
+const baiduPassport = require('./lib/baidu/passport.js');
+const neteaseMusic = require('./lib/netease/music.js');
 
-
-var CALLBACK = function (cookie) {
+const CALLBACK = function (cookie) {
     console.log(cookie);
     return cookie;
 };
