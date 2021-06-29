@@ -2,20 +2,20 @@
  * @file bird-auth > index
  */
 
-var birdUuap = require('./lib/baidu/uuap.js');
-var birdPassport = require('./lib/baidu/passport.js');
-var birdNetease = require('./lib/netease/music.js');
-var client = require('./lib/httpClient.js');
+const uuap = require('./lib/baidu/uuap.js');
+const passport = require('./lib/baidu/passport.js');
+const birdNetease = require('./lib/netease/music.js');
+const client = require('./lib/httpClient.js');
 
 module.exports = {
-    uuap: birdUuap,
-    passport: birdPassport,
+    uuap,
+    passport,
     baidu: {
-        uuap: birdUuap,
-        passport: birdPassport
+        uuap,
+        passport
     },
     netease: {
         music: birdNetease
     },
-    client: client
+    client
 };
