@@ -99,6 +99,7 @@ const music = new birdAuth.netease.music({
 
 ## History
 
+- [2.2.0] change login to authorize.
 - [2.1.0] remove service params.
 - [2.0.0] refactor & update auth.
 - [1.2.8] add auth rsa check.
