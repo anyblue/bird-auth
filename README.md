@@ -58,6 +58,7 @@ const birdAuth = require('bird-auth')
 const uuap = new birdAuth.baidu.uuap({
     username: 'xxx',
     password: 'xxx',
+    type: 3, // default 1 is username and password; 3 is username and verification code.
     uuapServer: 'http://xxx.baidu.com/login', // CAS auth url 
     service: 'http://xxx.baidu.com/' // service address, if you don't know this url, you can logout you system, and get `service` parameters
 }, function(cookie) {
@@ -99,6 +100,7 @@ const music = new birdAuth.netease.music({
 
 ## History
 
+- [2.3.1] add type option to auth parameter.
 - [2.3.0] fix token verification mechanism.
 - [2.2.1] modify parameter naming.
 - [2.2.0] change login to authorize.
