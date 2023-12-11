@@ -100,6 +100,7 @@ const music = new birdAuth.netease.music({
 
 ## History
 
+- [2.4.1] fix url check method.
 - [2.4.0] switch login to authorize.
 - [2.3.1] add type option to auth parameter.
 - [2.3.0] fix token verification mechanism.
